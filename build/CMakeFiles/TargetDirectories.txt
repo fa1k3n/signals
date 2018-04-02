@@ -1,5 +1,0 @@
-/Users/Falken/Documents/programmering/signals/build/CMakeFiles/rebuild_cache.dir
-/Users/Falken/Documents/programmering/signals/build/CMakeFiles/edit_cache.dir
-/Users/Falken/Documents/programmering/signals/build/test/CMakeFiles/rebuild_cache.dir
-/Users/Falken/Documents/programmering/signals/build/test/CMakeFiles/edit_cache.dir
-/Users/Falken/Documents/programmering/signals/build/test/CMakeFiles/unittest.dir
