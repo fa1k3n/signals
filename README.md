@@ -1,3 +1,5 @@
+[![Build status](https://travis-ci.org/fa1k3n/signals.svg?branch=master)](https://travis-ci.org/fa1k3n/signals)
+
 # signals
 
 A small wrapper around boost::signals2 library to simplify the API and align more towards Qt signal-slot mechanism
