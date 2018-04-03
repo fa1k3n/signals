@@ -16,14 +16,13 @@ endif ()
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${GTestSrc} ${GTestSrc}/include ${GMockSrc} ${GMockSrc}/include)
 
-set(TESTCASES
-    tst_signals.cpp
+set(GTEST
     ${GTestSrc}/src/gtest-all.cc
     ${GMockSrc}/src/gmock-all.cc)
 
 cmake_policy(SET CMP0037 OLD)
 
-add_executable(build-tests EXCLUDE_FROM_ALL main.cpp ${TESTCASES})
+add_executable(build-tests EXCLUDE_FROM_ALL SignalsTest.cpp ${GTEST})
 target_link_libraries(build-tests Threads::Threads)
 
 add_custom_target(test COMMAND ${CMAKE_BINARY_DIR}/test/build-tests)
