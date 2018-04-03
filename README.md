@@ -11,9 +11,9 @@ A small wrapper around boost::signals2 library to simplify the API and align mor
 
 # Building
 
-    mkdir build & cd build
-    cmake ..
-    make unittest
+    mkdir build && cd build
+    cmake  .. && make build-tests
+    make test
     
 # Usage
 
