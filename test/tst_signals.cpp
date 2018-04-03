@@ -18,7 +18,7 @@ public:
 TEST(signal, basicLambdaConnect) {
 	testEmitter tst;
 	bool hasBeenCalled = false;
-	Signals::connect(&testEmitter::noArgSignal, &tst, [&hasBeenCalled]() {
+	Signals::connect(&tst, &testEmitter::noArgSignal, [&hasBeenCalled]() {
 		hasBeenCalled = true;
 	});
 	emit tst.noArgSignal();
@@ -28,7 +28,7 @@ TEST(signal, basicLambdaConnect) {
 TEST(signal, basicMethodConnect) {
 	testEmitter tst;
 	EXPECT_CALL(tst, noArgsSlot());
-	Signals::connect(&testEmitter::noArgSignal, &tst, &testEmitter::noArgsSlot, &tst);
+	Signals::connect(&tst, &testEmitter::noArgSignal, &tst, &testEmitter::noArgsSlot);
 	emit tst.noArgSignal();
 }
 
@@ -39,7 +39,7 @@ void fun() {
 
 TEST(signal, basicFunctionConnect) {
 	testEmitter tst;
-	Signals::connect(&testEmitter::noArgSignal, &tst, &fun);
+	Signals::connect(&tst, &testEmitter::noArgSignal, &fun);
 	emit tst.noArgSignal();
 	EXPECT_TRUE(funCalled);
 }
@@ -47,7 +47,7 @@ TEST(signal, basicFunctionConnect) {
 TEST(signal, twoArgumentConnect) {
     testEmitter tst;
     EXPECT_CALL(tst, twoArgsSlot(1, "foo bar"));
-    Signals::connect(&testEmitter::twoArgSignal, &tst, &testEmitter::twoArgsSlot, &tst);
+    Signals::connect(&tst, &testEmitter::twoArgSignal, &tst, &testEmitter::twoArgsSlot);
     emit tst.twoArgSignal(1, "foo bar");
 }
 
