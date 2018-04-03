@@ -51,11 +51,12 @@ for clarity of reading Signals defines the macro emit which will resolve to noth
 
 ```c++
 #include <signals/signal.hpp>
+#include <iostream>
 #include <string>
 
 class SayerClass {
 public:
-    Signals::signal<std::string str> sayWhat;
+    Signals::signal<std::string> sayWhat;
 };
 
 class WriterClass {
@@ -67,8 +68,8 @@ public:
 
 int main(void) {
     SayerClass sc;
-    WriterClass wc:
-    Signals.connect(&sc, &SayerClass::sayWhat, &wc, &WriterClass::writeIt);
+    WriterClass wc;
+    Signals::connect(&sc, &SayerClass::sayWhat, &wc, &WriterClass::writeIt);
     emit sc.sayWhat("Hello Signals");
     return 0;
 }

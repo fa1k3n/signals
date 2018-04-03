@@ -21,7 +21,10 @@ set(TESTCASES
     ${GTestSrc}/src/gtest-all.cc
     ${GMockSrc}/src/gmock-all.cc)
 
-add_executable(unittest EXCLUDE_FROM_ALL main.cpp ${TESTCASES})
-add_test(unittest COMMAND unittest)
-target_link_libraries(unittest Threads::Threads)
+cmake_policy(SET CMP0037 OLD)
+
+add_executable(build-tests EXCLUDE_FROM_ALL main.cpp ${TESTCASES})
+target_link_libraries(build-tests Threads::Threads)
+
+add_custom_target(test COMMAND ${CMAKE_BINARY_DIR}/test/build-tests)
 

@@ -19,6 +19,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 add_subdirectory("test")
+add_subdirectory("examples")
 
 add_library(signals INTERFACE)
 target_sources(signals INTERFACE include/signal.hpp)

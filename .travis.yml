@@ -8,5 +8,5 @@ before_install:
     - sudo apt-get install -y cmake libboost-all-dev
 script: 
     - mkdir build && cd build
-    - cmake  .. && make unittest
-    - ./test/unittest
+    - cmake  .. && make build-tests
+    - make test

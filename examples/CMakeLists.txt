@@ -1,0 +1,1 @@
+add_executable(examples EXCLUDE_FROM_ALL signalsExample.cpp)
